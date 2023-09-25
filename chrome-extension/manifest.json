@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "Scrape NYT Mini Crossword Times",
+    "version": "1.0.1",
+    "description": "It scrapes the NYT Mini Crossword times",
+    "background": {
+        "type": "module",
+        "service_worker": "worker.js"
+    },
+    "host_permissions": [
+        "*://*.nytimes.com/puzzles/leaderboards*"
+    ],
+    "permissions": [
+        "alarms",
+        "activeTab",
+        "scripting",
+        "tabs"
+    ],
+    "author": "bobo.tucci@triple-check.com"  
+}
