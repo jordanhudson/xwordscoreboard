@@ -28,6 +28,7 @@ const scrape = async () => {
     });
   }
   console.log(payload);
+  // TODO: upload payload to api
 };
 
 // refresh the nytimes.com tab every minute
