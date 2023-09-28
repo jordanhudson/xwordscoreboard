@@ -16,10 +16,18 @@ const refreshNYTimesTab = async () => {
 
 // scrape the times and upload them
 const scrape = async () => {
-  console.log('*** BEGIN SCRAPER ***');
-  const dateStr = document.getElementsByClassName("lbd-type__date")[0].innerText;
-  console.log(dateStr);
-  console.log('*** END SCRAPER ***');
+  var payload = {};
+
+  payload.dateStr = document.querySelector('.lbd-type__date').innerText;
+
+  payload.scores = [];
+  for(var e of document.querySelectorAll('.lbd-score:not(.no-rank)')) {
+    payload.scores.push({
+      name: e.querySelector('.lbd-score__name').textContent.replace(/\s+\(you\)$/, '').trim(),
+      time: e.querySelector('.lbd-score__time').textContent,
+    });
+  }
+  console.log(payload);
 };
 
 // refresh the nytimes.com tab every minute
