@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-
-const cdk = require('aws-cdk-lib');
-const { XwordscoreboardStack } = require('../lib/xwordscoreboard-stack');
+import 'source-map-support/register';
+import * as cdk from 'aws-cdk-lib';
+import { XwordScoreboardStack } from '../lib/stack';
 
 const app = new cdk.App();
-new XwordscoreboardStack(app, 'XwordscoreboardStack', {
+new XwordScoreboardStack(app, 'XwordScoreboardStack', {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
    * but a single synthesized template can be deployed anywhere. */
